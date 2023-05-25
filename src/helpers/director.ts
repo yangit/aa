@@ -66,6 +66,7 @@ const nextClick = (): void => {
             isSiri = true;
           }
           try {
+            console.log('unlinking remove', config.recPath);
             fs.unlinkSync(config.recPath);
           } catch {}
 

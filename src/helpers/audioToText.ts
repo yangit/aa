@@ -18,5 +18,12 @@ export default async (): Promise<string> => {
       ...form.getHeaders(),
       Authorization: `Bearer ${openAiApiKey}`,
     },
-  }).then((response) => response.data.text);
+  }).then((response) => response.data.text).then((r) => {
+    console.log('rrrrr111');
+    return r;
+  }, (err) => {
+    console.log('eeee111');
+
+    throw err;
+  });
 };

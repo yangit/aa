@@ -31,6 +31,10 @@ const nextClick = (): void => {
 
         if (state.get().alfredClick === 'rest') {
           playInst('click.wav');
+          try {
+            console.log('unlinking remove', config.recPath);
+            fs.unlinkSync(config.recPath);
+          } catch { }
           await Promise.all([
             cursorToVar().then((text) => {
               console.log('setting clip beofre rec', text);
@@ -65,10 +69,6 @@ const nextClick = (): void => {
 
             isSiri = true;
           }
-          try {
-            console.log('unlinking remove', config.recPath);
-            fs.unlinkSync(config.recPath);
-          } catch {}
 
           const clip = state.get().clip;
           if (clip.length === 0 && !isSiri) {

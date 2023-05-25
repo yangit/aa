@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 const defaultState: State = {
   alfredClick: 'rest',
   clip: '',
-  lastClick: new Date(),
+  running: false,
 };
 
 const state: State = JSON.parse(JSON.stringify(defaultState));

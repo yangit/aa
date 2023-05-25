@@ -21,12 +21,12 @@ const model = 'gpt-4';
 
 const clicks: Date[] = [new Date()];
 let currentIndex = 0;
-let running = false;
+
 const nextClick = (): void => {
   setImmediate(() => {
     (async (): Promise<void> => {
-      if (!running && clicks.length > currentIndex + 1) {
-        running = true;
+      if (!state.get().running && clicks.length > currentIndex + 1) {
+        state.set('running', true);
         currentIndex += 1;
 
         if (state.get().alfredClick === 'rest') {
@@ -39,7 +39,7 @@ const nextClick = (): void => {
             recordStart(),
           ]);
           state.set('alfredClick', 'recording');
-          running = false;
+          state.set('running', false);
           nextClick();
           return;
         }
@@ -75,7 +75,7 @@ const nextClick = (): void => {
             playInst('done.mp3');
             await varToCursor(voice);
             state.set('alfredClick', 'rest');
-            running = false;
+            state.set('running', false);
             nextClick();
             return;
           } else {
@@ -89,7 +89,7 @@ const nextClick = (): void => {
               ).join('\n\n');
               await varToCursor(conversaionList).then(() => {}, (err) => { throw err; });
               state.set('alfredClick', 'rest');
-              running = false;
+              state.set('running', false);
               nextClick();
               return;
             }
@@ -103,7 +103,7 @@ const nextClick = (): void => {
               }
 
               state.set('alfredClick', 'rest');
-              running = false;
+              state.set('running', false);
               nextClick();
               return;
             }
@@ -127,7 +127,7 @@ const nextClick = (): void => {
                 playInst('water.mp3');
               }
               state.set('alfredClick', 'rest');
-              running = false;
+              state.set('running', false);
               nextClick();
               return;
             } else {
@@ -146,7 +146,7 @@ const nextClick = (): void => {
                 console.log('No voice or clip');
               }
               state.set('alfredClick', 'rest');
-              running = false;
+              state.set('running', false);
               nextClick();
               return;
             }
@@ -163,7 +163,8 @@ const nextClick = (): void => {
     })().then(() => {}, (err) => {
       cleanUp();
       state.set('alfredClick', 'rest');
-      console.log('Err:', err);
+      state.set('running', false);
+      console.log('Err:', err, err?.response?.data?.error);
       playInst('water.mp3');
     });
   });

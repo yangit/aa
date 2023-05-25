@@ -1,20 +1,17 @@
 import express from 'express';
 import director from './helpers/director';
 import state from './helpers/state';
-import playInst from './helpers/playInst';
-import cleanUp from './helpers/cleanup';
 
 const app: express.Application = express();
 const port = 3012;
 
 app.get('/click', (_req: express.Request, res: express.Response) => {
-  director({ alfredClick: true }).catch((err) => {
-    cleanUp();
-    state.set('alfredClick', 'rest');
-    console.log('Err:', err);
-    playInst('water.mp3');
-  });
+  director({ alfredClick: true }).then(() => {}, (err) => { throw err; });
   res.send('click ok');
+});
+
+app.get('/state', (_req: express.Request, res: express.Response) => {
+  res.send(JSON.stringify(state.get(), null, '\t'));
 });
 
 app.listen(port, () => {

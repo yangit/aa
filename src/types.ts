@@ -1,8 +1,8 @@
 export interface State {
   alfredClick: 'rest' | 'recording' | 'stoppingRecording' | 'processing' | 'pasting' | 'answering'
   clip: string
-  lastClick: Date
   stop?: () => void
+  running: boolean
 }
 
 export interface Message {

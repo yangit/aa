@@ -20,7 +20,10 @@ export default async (conversation: Conversation, onStart: () => void): Promise<
   const previous = conversation.messages.map(({ content }, mIndex) => `${content}\n${getCursor(conversation, mIndex)}`).join('\n');
 
   answerStream.write(`${previous}\n`);
-  await exec(`open -a ${config.tailApp} ${newAnswerFileName}`);
+  const cmd = `open -a ${config.tailApp} ${newAnswerFileName}`;
+  console.log(cmd);
+
+  await exec(cmd);
   let startedStreaming = false;
   const answer = await ask({
     conversation,

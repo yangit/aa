@@ -1,0 +1,3 @@
+let sessionName = "Input Device";
+let session = app.sessionWithName(sessionName);
+session.stop();

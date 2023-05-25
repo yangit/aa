@@ -1,0 +1,7 @@
+let sessionName = "Input Device";
+let session = app.sessionWithName(sessionName);
+if (session.running) {
+session.stop();	
+} else {
+	session.start();
+}

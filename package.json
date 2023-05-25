@@ -31,7 +31,7 @@
     "build": "webpack",
     "buildDev": "webpack --watch --progress",
     "dev": "OPENAI_API_KEY=$(cat ~/Dropbox/.openAiKey) npx nodemon dist/server.js",
-    "run": "OPENAI_API_KEY=$(cat ~/Dropbox/.openAiKey) node dist/server.js"
+    "start": "OPENAI_API_KEY=$(cat ~/Dropbox/.openAiKey) node dist/server.js"
   },
   "repository": {
     "type": "git",

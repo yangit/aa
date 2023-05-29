@@ -17,3 +17,9 @@ app.get('/state', (_req: express.Request, res: express.Response) => {
 app.listen(port, () => {
   console.log(`AA on port ${port}`);
 });
+
+// process.on('unhandledRejection', (reason, p) => {
+//   console.log('in unhadled state');
+
+//   console.log(reason, p);
+// });

@@ -1,5 +1,5 @@
 import path from 'path';
-const rootDir = process.env.NODE_ENV === 'development' ? './' : '../';
+const rootDir = process.env.NODE_ENV === 'development' ? './' : './';
 export default {
   soundDir: path.resolve(rootDir, 'sounds'),
   assetsDir: path.resolve(rootDir, 'assets'),

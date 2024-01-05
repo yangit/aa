@@ -1,9 +1,9 @@
-export interface State {
-  alfredClick: 'rest' | 'recording' | 'stoppingRecording' | 'processing' | 'pasting' | 'answering'
-  clip: string
-  stop?: () => void
-  running: boolean
-}
+// export interface State {
+//   // alfredClick: 'rest' | 'recording' | 'stoppingRecording' | 'processing' | 'pasting' | 'answering'
+//   // clip: string
+//   // stop?: () => void
+//   // running: boolean
+// }
 
 export interface Message {
   messageId?: string

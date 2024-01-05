@@ -1,7 +1,7 @@
 import { type Conversation } from '../types';
 // @ts-expect-error no types
 import EventSource from './eventsource';
-import state from './state';
+// import state from './state';
 
 export default async (
   { conversation, onMessage = () => {} }:
@@ -48,9 +48,9 @@ export default async (
     const stop = (): void => {
       resolve(response);
       es.close();
-      state.set('stop', undefined);
+      // state.set('stop', undefined);
     };
-    state.set('stop', stop);
+    // state.set('stop', stop);
     const listener = (event: ChoicesEvent): void => {
       try {
         if (event.data === '[DONE]') {

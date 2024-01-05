@@ -6,7 +6,7 @@
   "scripts": {
     "build": "mkdir -p rec && webpack",
     "buildDev": "webpack --watch --progress",
-    "dev": "OPENAI_API_KEY=$(cat ~/Dropbox/keys/.openAiKey) npx nodemon dist/server.js",
+    "dev": "OPENAI_API_KEY=$(cat ~/Dropbox/keys/.openAiKey) NODE_ENV=development npx ts-node-dev src/index.ts",
     "start": "OPENAI_API_KEY=$(cat ~/Dropbox/keys/.openAiKey) node dist/server.js"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "shell-quote": "^1.8.1",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.4",
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1"

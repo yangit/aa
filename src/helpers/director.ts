@@ -85,7 +85,7 @@ export const askAtCursor = async (): Promise<void> => {
   } else {
     conversation = { model, messages: [{ role: 'user', content: clip }] };
   }
-  console.log('conversation', continuing, conversation);
+  // console.log('conversation', continuing, conversation);
 
   if (clip.length > 0) {
     permaState.add(conversation);

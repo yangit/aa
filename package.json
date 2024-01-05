@@ -6,7 +6,7 @@
   "scripts": {
     "build": "mkdir -p rec && webpack",
     "buildDev": "webpack --watch --progress",
-    "dev": "OPENAI_API_KEY=$(cat ~/Dropbox/keys/.openAiKey) NODE_ENV=development npx ts-node-dev src/index.ts",
+    "dev": "OPENAI_API_KEY=$(cat ~/Dropbox/keys/.openAiKey) NODE_ENV=development npx ts-node-dev --respawn src/index.ts",
     "start": "OPENAI_API_KEY=$(cat ~/Dropbox/keys/.openAiKey) node dist/server.js"
   },
   "dependencies": {

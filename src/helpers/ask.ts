@@ -14,7 +14,6 @@ export default async (
     };
 
     const dataJson = JSON.stringify(data);
-    console.log(dataJson);
 
     // Read OpenAI API key from file and set authorization header for API request
     const token = process.env.OPENAI_API_KEY;

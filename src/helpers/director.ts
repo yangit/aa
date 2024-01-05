@@ -47,6 +47,7 @@ export const toggleRecord = async (): Promise<void> => {
     playInst('sending.mp3');
     await recordStop();
     const voice = await audioToText();
+    playInst('done.mp3');
     await varToCursor(voice).then(() => { }, (err) => { throw err; });
     recordingBusy = false;
   };

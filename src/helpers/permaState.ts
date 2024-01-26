@@ -1,11 +1,9 @@
 import { type Message, type Conversation, type PermaState } from '../types';
-import * as os from 'os';
-import * as path from 'path';
 import * as fs from 'fs';
 import * as _ from 'lodash';
+import config from './config';
 
-const homeDir = os.homedir();
-const permaStateFile = path.resolve(homeDir, './.aaState.json');
+const permaStateFile = config.permaStateFile;
 
 const defaultState: PermaState = [];
 

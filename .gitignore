@@ -3,3 +3,4 @@ openAiKey
 node_modules
 log.txt
 /dist
+.DS_Store

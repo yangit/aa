@@ -6,6 +6,7 @@ export default {
   recPath: path.resolve(rootDir, 'rec/rec.mp3'),
   processingPath: path.resolve(rootDir, 'rec/recProcessing.mp3'),
   answerPath: path.resolve(rootDir, 'rec/'),
+  permaStateFile: path.resolve(rootDir, 'rec/aaState.json'),
   // tailApp: 'BBEdit',
   tailApp: 'Sublime\\ Text',
 };

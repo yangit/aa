@@ -1,4 +1,5 @@
 import path from 'path';
+
 const rootDir = process.env.NODE_ENV === 'development' ? './' : './';
 export default {
   soundDir: path.resolve(rootDir, 'sounds'),
@@ -10,3 +11,5 @@ export default {
   // tailApp: 'BBEdit',
   tailApp: 'Sublime\\ Text',
 };
+export const model = 'claude-3-5-sonnet-20240620'
+export const max_tokens = 1024;

@@ -14,7 +14,7 @@ export interface Message {
 export interface Conversation {
   conversationId?: string
   title?: string
-  model: 'gpt-3.5-turbo' | 'gpt-4'
+  model: 'gpt-3.5-turbo' | 'gpt-4' | 'claude-3-5-sonnet-20240620'
   messages: Message[]
 }
 export type PermaState = Conversation[];

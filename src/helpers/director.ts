@@ -15,8 +15,7 @@ import path from 'path';
 import playInst from './playInst';
 import getUserQuestion from './getUserQuestion';
 import handler from './handler';
-
-const model = 'gpt-4';
+import { model } from './config';
 const minusC = /^-c:(\d+)(?: |\n|$)/;
 
 let recording = false;

@@ -1,5 +1,5 @@
 import { type Conversation } from '../types';
-import ask from './ask';
+import ask from './ask-claude';
 import config from './config';
 import exec from './exec';
 import path from 'path';
